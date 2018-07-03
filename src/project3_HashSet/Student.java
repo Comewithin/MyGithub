@@ -1,6 +1,6 @@
 package project3_HashSet;
 
-public class Student implements Comparable <Student>{
+public class Student {
 
 	private String name;
 	private int age;
@@ -36,6 +36,7 @@ public class Student implements Comparable <Student>{
 		int result = 1;
 		result = prime * result + age;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		System.out.println(this.getName()+"---hashCode---");
 		return result;
 		
 	}
@@ -56,6 +57,7 @@ public class Student implements Comparable <Student>{
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		System.out.println(this.getName()+"---equals---"+((Student) obj).getName());
 		return true;
 		
 //		if(!(obj instanceof Student))
@@ -65,21 +67,9 @@ public class Student implements Comparable <Student>{
 //		return this.name.equals(stu.name)&&this.age == stu.age;
 	}
 	
-//	@Override
-//	public String toString() {
-//		return "Student [name=" + name + ", age=" + age + "]";
-//	}
-
-
-	//通过年龄排序
 	@Override
-	public int compareTo(Student o) {
-		// TODO Auto-generated method stub
-		int num = new Integer(this.age).compareTo(new Integer(o.age));
-		if(num==0)
-			return this.name.compareTo(o.name);
-		return num;
+	public String toString() {
+		return "Student [name=" + name + ", age=" + age + "]";
 	}
-
 	
 }
