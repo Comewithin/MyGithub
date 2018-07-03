@@ -1,6 +1,6 @@
 package project5_List;
 
-public class Student implements Comparable <Student>{
+public class Student {
 
 	private String name;
 	private int age;
@@ -27,18 +27,6 @@ public class Student implements Comparable <Student>{
 		this.age = age;
 	}
 
-	
-	
-	@Override
-	public int hashCode() {
-		//System.out.println(this.name+"------hasCode");
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + age;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
-		
-	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -56,12 +44,13 @@ public class Student implements Comparable <Student>{
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		System.out.println(this.name+"---equals---"+other.name);
 		return true;
 		
 //		if(!(obj instanceof Student))
 //			return false;
 //		Student stu = (Student)obj;
-//		//System.out.println(this.name+"------"+stu.name);
+//		System.out.println(this.name+"---equals---"+stu.name);
 //		return this.name.equals(stu.name)&&this.age == stu.age;
 	}
 	
@@ -69,17 +58,5 @@ public class Student implements Comparable <Student>{
 	public String toString() {
 		return "Student [name=" + name + ", age=" + age + "]";
 	}
-
-
-	//通过年龄排序
-	@Override
-	public int compareTo(Student o) {
-		// TODO Auto-generated method stub
-		int num = new Integer(this.age).compareTo(new Integer(o.age));
-		if(num==0)
-			return this.name.compareTo(o.name);
-		return num;
-	}
-
 	
 }

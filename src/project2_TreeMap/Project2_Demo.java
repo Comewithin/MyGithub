@@ -6,8 +6,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;//可以排序，HashMap无序
 
-import project3_HashSet.Student;
-
 public class Project2_Demo {
 
 	public static void main(String[] args) {
@@ -15,10 +13,10 @@ public class Project2_Demo {
 
 		Map<Student,String> map = new TreeMap<Student,String>(/*new AgeComparator()*/);
 		map.put(new Student("c",22),"天津");
-		map.put(new Student("a",22),"北京");
+		map.put(new Student("a",28),"北京");
 		map.put(new Student("c",22),"海南");
 		map.put(new Student("b",21),"上海");
-		map.put(new Student("a",22),"北京");
+		map.put(new Student("a",28),"北京");
 		
 //		Set<Student> set2 = map.keySet();
 //		Iterator<Student> it2 = set2.iterator();
@@ -35,7 +33,7 @@ public class Project2_Demo {
 			Map.Entry<Student, String> me = it1.next();
 			Student key = me.getKey();
 			String value = me.getValue();
-			System.out.println("键:"+key+", 值:"+value);
+			System.out.println("键:"+key.getName()+","+key.getAge()+", 值:"+value);
 			//System.out.println(me);
 		}
 	}

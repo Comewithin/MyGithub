@@ -3,8 +3,6 @@ package project5_List;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import project3_HashSet.Student;
-
 public class Project5_Demo1 {
 
 	public static void main(String[] args) {
@@ -15,8 +13,7 @@ public class Project5_Demo1 {
 		 list.add(new Student("haha",21));
 		 list.add(new Student("haha",21));
 		 list.add(new Student("zhangsan",23));
-		 list.add(new Student("lisi",22));
-		 
+		 //list.add(new Student("lisi",22));		 
 		 
 	     list = Single(list);
 	     //System.out.println(list);
@@ -58,20 +55,21 @@ public class Project5_Demo1 {
 	
 	}
 	
-	public static ArrayList Single(ArrayList al)
+	public static ArrayList<Student> Single(ArrayList<Student> al)
 	{
-		ArrayList list = new ArrayList();
-		Iterator t = al.iterator();
+		ArrayList<Student> list = new ArrayList<Student>();
+		Iterator<Student> t = al.iterator();
 		while(t.hasNext())
 		{
-			Object obj = t.next();
-			if(!list.contains(obj))
-				list.add(obj);
+			Student stu = (Student) t.next();
+			
+			if(!list.contains(stu))
+			{
+				list.add(stu);
+				//System.out.println(list);
+			}
 		}
-		return list;
-		
+		return list;		
 	}
+	
 }
-
-
-
